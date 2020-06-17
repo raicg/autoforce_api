@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_191237) do
+ActiveRecord::Schema.define(version: 2020_06_17_191805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2020_06_17_191237) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "batch_id"
+    t.index ["batch_id"], name: "index_orders_on_batch_id"
     t.index ["client_name"], name: "index_orders_on_client_name"
     t.index ["delivery_service"], name: "index_orders_on_delivery_service"
     t.index ["purchase_channel"], name: "index_orders_on_purchase_channel"
@@ -42,4 +44,5 @@ ActiveRecord::Schema.define(version: 2020_06_17_191237) do
     t.index ["status"], name: "index_orders_on_status"
   end
 
+  add_foreign_key "orders", "batches"
 end
