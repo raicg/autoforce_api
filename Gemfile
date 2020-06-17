@@ -23,6 +23,8 @@ gem 'redis', '4.1.3'
 gem 'sidekiq', '6.0.7'
 # Use dotenv-rails as environment variables manager
 gem 'dotenv-rails', '2.7.5'
+# Use aasm to create state machine on models
+gem 'aasm', '5.0.8'
 
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
