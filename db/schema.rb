@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_175758) do
+ActiveRecord::Schema.define(version: 2020_06_17_191237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "batches", force: :cascade do |t|
+    t.string "reference"
+    t.string "purchase_channel"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["purchase_channel"], name: "index_batches_on_purchase_channel"
+    t.index ["reference"], name: "index_batches_on_reference"
+  end
 
   create_table "orders", force: :cascade do |t|
     t.string "reference"
