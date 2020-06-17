@@ -1,3 +1,4 @@
 :concurrency: 5
 :queues:
   - send_orders
+  - close_orders

@@ -6,6 +6,10 @@ class Batch < ApplicationRecord
   validates :orders, presence: true
   validate :orders_purchase_channel_must_be_the_same
 
+  def close_orders
+    CloseOrdersJob.perform_later(id)
+  end
+
   def send_orders(delivery_service)
     SendOrdersJob.perform_later(id, delivery_service)
   end
