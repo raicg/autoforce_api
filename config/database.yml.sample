@@ -1,0 +1,20 @@
+default: &default
+  adapter:  postgresql
+  host:     db
+  encoding: unicode
+  pool:     5
+  username: postgres
+  password:
+  template: template0
+
+development:
+  database: autoforce_development
+  <<: *default
+
+test:
+  database: autoforce_test
+  <<: *default
+
+production:
+  database: autoforce_production
+  <<: *default
