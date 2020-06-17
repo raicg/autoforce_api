@@ -41,6 +41,8 @@ group :development, :test do
   # Use rubocop to help with good practices
   gem 'rubocop-rails', '2.6.0'
   gem 'rubocop-performance', '1.6.1'
+  # Use Rspec as the main testing framework, added on development environment to automatically handle with generators and tasks
+  gem 'rspec-rails', '4.0.1'
 end
 
 group :development do
@@ -58,8 +60,7 @@ group :test do
   gem 'selenium-webdriver', '3.142.7'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers', '4.4.1'
-  # Use Rspec as the main testing framework
-  gem 'rspec-rails', '4.0.1'
+  # Use rspec-sidekiq to test jobs
   gem 'rspec-sidekiq', '3.0.3'
   # Use factory_bot_rails to help with the tests
   gem 'factory_bot_rails', '5.2.0'
