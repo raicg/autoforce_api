@@ -6,4 +6,8 @@ class Api::V1::OrderResource < JSONAPI::Resource
 
   filter :reference, :purchase_channel, :client_name, :status, 
          :delivery_service
+
+  def self.default_sort
+    [{field: 'created_at', direction: :desc}]
+  end
 end
