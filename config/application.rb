@@ -31,5 +31,8 @@ module Autoforce
     config.time_zone = 'Brasilia'
 
     config.i18n.default_locale = 'pt-BR'
+
+    config.active_job.queue_adapter     = :sidekiq
+    config.active_job.queue_name_prefix = "autoforce_#{Rails.env}"
   end
 end

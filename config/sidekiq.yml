@@ -1,5 +1,13 @@
-:concurrency: 5
-:queues:
-  - send_orders
-  - close_orders
-  - produce_orders
+development:
+  :concurrency: 5
+  :queues:
+    - autoforce_development_send_orders
+    - autoforce_development_close_orders
+    - autoforce_development_produce_orders
+
+production:
+  :concurrency: 20
+  :queues:
+    - autoforce_production_send_orders
+    - autoforce_production_close_orders
+    - autoforce_production_produce_orders
