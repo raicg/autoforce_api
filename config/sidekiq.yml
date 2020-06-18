@@ -2,3 +2,4 @@
 :queues:
   - send_orders
   - close_orders
+  - produce_orders

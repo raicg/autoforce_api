@@ -2,6 +2,7 @@ class Batch < ApplicationRecord
   has_many :orders
 
   before_validation :attach_orders
+  after_create :produce_orders
 
   validates :orders, presence: true
   validate :orders_purchase_channel_must_be_the_same
@@ -18,6 +19,10 @@ class Batch < ApplicationRecord
 
   def attach_orders
     orders << Order.where(status: 'ready', purchase_channel: purchase_channel, batch_id: nil)
+  end
+
+  def produce_orders
+    ProduceOrdersJob.perform_later(id)
   end
 
   def orders_purchase_channel_must_be_the_same
