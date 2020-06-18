@@ -31,7 +31,7 @@ class Order < ApplicationRecord
 
   def batch_id_cant_be_changed_after_production 
     unless ready?
-      errors.add(:orders, 'batch id cant be changed after production')
+      errors.add(:orders, I18n.t(:batch_id_cant_be_changed_after_production, scope: 'errors.messages'))
     end
   end
 end

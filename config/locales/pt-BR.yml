@@ -1,0 +1,8 @@
+pt-BR:
+  all_orders_closed: "Todos os pedidos foram fechados."
+  all_orders_sent: "Todos os pedidos do sistema de envio selecionado foram enviados."
+  
+  errors:
+    messages:
+      batch_id_cant_be_changed_after_production: "O atributo batch_id não pode ser modificado depois do pedido ter ido para produção."
+      every_order_must_have_the_same_purchase_channel: "Todos os pedidos devem ter o mesmo canal de compra."
