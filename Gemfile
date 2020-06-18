@@ -25,6 +25,8 @@ gem 'sidekiq', '6.0.7'
 gem 'dotenv-rails', '2.7.5'
 # Use aasm to create state machine on models
 gem 'aasm', '5.0.8'
+# Use jsonapi-resources to handle the api endpoints
+gem 'jsonapi-resources', '0.10.2'
 
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
