@@ -4,7 +4,7 @@ class Batch < ApplicationRecord
   before_validation :attach_orders
   after_create :produce_orders
 
-  validates :orders, presence: true
+  validates :orders, :reference, :purchase_channel, presence: true
   validate :orders_purchase_channel_must_be_the_same
 
   def close_orders
