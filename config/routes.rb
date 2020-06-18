@@ -8,6 +8,7 @@ Rails.application.routes.draw do
           post :send_orders
         end
       end
+      resources :financials, only: [:index]
     end
   end
 end
