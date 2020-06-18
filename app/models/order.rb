@@ -5,6 +5,7 @@ class Order < ApplicationRecord
 
   validates :reference, :purchase_channel, :client_name, :address,
             :delivery_service, :total_value, :line_items, presence: true
+  validate :batch_id_cant_be_changed_after_production, on: :update, if: :batch_id_changed?
 
   enum status: [:ready, :production, :closing, :sent]
   aasm column: :status, enum: true do
@@ -23,6 +24,14 @@ class Order < ApplicationRecord
 
     event :send_order do
       transitions from: :closing, to: :sent
+    end
+  end
+
+  private
+
+  def batch_id_cant_be_changed_after_production 
+    unless ready?
+      errors.add(:orders, 'batch id cant be changed after production')
     end
   end
 end
