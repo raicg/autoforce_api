@@ -1,7 +1,7 @@
 class Api::V1::BatchResource < JSONAPI::Resource
-  attributes :reference, :delivery_service
+  attributes :reference, :purchase_channel
 
   has_many :orders
 
-  filter :reference, :delivery_service
+  filter :reference, :purchase_channel
 end
