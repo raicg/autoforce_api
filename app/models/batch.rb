@@ -28,6 +28,7 @@ class Batch < ApplicationRecord
   def orders_purchase_channel_must_be_the_same
     unless orders.map { |o| o.purchase_channel }.uniq.length == 1
       errors.add(:orders, I18n.t(:every_order_must_have_the_same_purchase_channel, scope: 'errors.messages'))
+      throw :abort
     end
   end
 end
