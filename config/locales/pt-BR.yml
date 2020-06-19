@@ -1,12 +1,14 @@
 pt-BR:
   all_orders_closed: "Todos os pedidos foram fechados."
-  all_orders_sent: "Todos os pedidos do sistema de envio selecionado foram enviados."
+  all_orders_sent: "Todos os pedidos do lote que possuam o serviço de envio selecionado foram enviados."
   
   errors:
     messages:
       batch_id_cant_be_changed_after_production: "O atributo batch_id não pode ser modificado depois do pedido ter ido para produção."
+      batch_not_found: "Lote não encontrado."
       blank: "em branco."
       every_order_must_have_the_same_purchase_channel: "Todos os pedidos devem ter o mesmo canal de compra."
+      must_send_delivery_service_variable_as_parameter: "Deve ser enviado a variável delivery_service como parâmetro."
+      purchase_channel_should_be_the_same_as_the_batch: "O canal de compra do pedido deve ser o mesmo do lote."
       required: "obrigatório."
       taken: "já existente."
-    
