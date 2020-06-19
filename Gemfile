@@ -68,6 +68,8 @@ group :test do
   gem 'rspec-sidekiq', '3.0.3'
   # Use factory_bot_rails to help with the tests
   gem 'factory_bot_rails', '5.2.0'
+  # Use database_cleaner to erase tests database
+  gem 'database_cleaner', '1.8.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
