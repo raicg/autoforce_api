@@ -77,6 +77,11 @@ To check installation, run:
 
 To continue you will need to open an postgresql server and update config/database.yml file.
 
+Then:
+
+1. `$ bundle exec rails db:create`
+1. `$ bundle exec rails db:migrate`
+
 After this you will need to open an redis server and update the .env file with the redis ip.
 
 And then you will need to open 2 servers, the worker and the web:
